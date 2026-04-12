@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+/* ------------------------------ */
+/* VARIÁVEIS DE TEMA */
+/* ------------------------------ */
+:root {
+  --surface: #e5cffa;
+  --bluey: rgb(95, 93, 93); 
+  --cinza: rgb(197, 187, 187); 
+  --on-primary: #faf8ff;
+  --blue: rgb(1, 1, 37);
+  --orange: #f48c25;
+  --white: white;
+  --branco: rgb(236, 228, 228);
+  --laranja: #FFDEAD; 
+  --gray: rgba(244, 140, 37, 0.1);
+}
+
+body {
+  background-color: #f8f7f5;
+  font-family: "Lexend", sans-serif;
+}
+
+p {
+  text-align: justify;
+}
+
+/* Dark mode */
+.dark {
+  --surface: #0d0f0c;
+  --primary: #bec6fb;
+  --on-primary: #1a1a1a;
+}
+
+/* ------------------------------ */
+/* ANIMAÇÕES */
+/* ------------------------------ */
+
+/* Slide do menu mobile */
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-slideLeft {
+  animation: slideLeft 0.35s ease-out forwards;
+}
+
+/* Fade in suave */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+/* Slide up suave */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 1.2s ease-out forwards;
+}
+
+/* Flutuação suave (imagem do hero) */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* FadeUp para cards */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeUp {
+  animation: fadeUp 0.8s ease-out forwards;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes cineFade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.animate-cineFade {
+  animation: cineFade 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
